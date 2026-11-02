@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-navy-950 text-slate-100 antialiased scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen font-sans leading-[1.5];
+    background-color: #050816;
+    background-image:
+      radial-gradient(900px 600px at 10% -10%, rgba(91, 33, 182, 0.35), transparent 60%),
+      radial-gradient(800px 600px at 110% 10%, rgba(14, 116, 144, 0.22), transparent 60%),
+      radial-gradient(700px 500px at 50% 110%, rgba(76, 29, 149, 0.3), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display leading-[1.2] tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-cyan-400/30 text-white;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_8px_32px_rgba(2,6,23,0.45)];
+  }
+
+  .glass-strong {
+    @apply rounded-2xl border border-white/15 bg-navy-900/70 backdrop-blur-2xl shadow-[0_12px_48px_rgba(2,6,23,0.6)];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-300 via-sky-300 to-plum-300 bg-clip-text text-transparent;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-navy-950/60 px-4 py-3 text-slate-100 placeholder:text-slate-500 transition duration-200 focus:border-cyan-400/60 focus:outline-none focus:ring-4 focus:ring-cyan-400/10;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950;
+  }
+}
